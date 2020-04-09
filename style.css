@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+:root{
+    --color-primary-red: hsl(0, 100%, 74%);
+    --color-primary-green: Green: hsl(154, 59%, 51%);
+    --color-accent-blue: hsl(248, 32%, 49%);
+    --color-neutral-dark-blue: hsl(249, 10%, 26%); 
+    --color-neutral-gray-blue: hsl(246, 25%, 77%);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: url('./images/bg-intro-desktop.png') no-repeat center center/cover, var(--color-primary-red);
+}
+
+header{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+}
+
+.row{
+    flex-direction: row;
+}
+
+.col{
+    flex-direction: column;
+}
+a{
+    text-decoration: none;
+}
+
+.info-part,.form-part{
+    flex:1;
+} 
+
+.info-part{
+    color: #fff;
+    width: 100%;
+    align-self: center;
+    margin: 2.5rem 0;
+    margin-right: 2rem;
+}
+
+.info-part h1{
+    font-size: 3.9rem;
+    line-height: 1.05;
+    margin-bottom: 40px;
+}
+
+.info-part p{
+    font-size: 1.18rem;
+}
+
+form{
+    max-width: 530px;
+    margin-bottom: 6rem;
+}
+
+.try-it{
+    background:hsl(248, 32%, 49%);
+    text-decoration: none;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 22px;
+    box-shadow: 0 8px rgba(0,0,0,0.18);
+    font-weight: 400;
+    transition: background-color 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.try-it:hover{
+    background: hsl(248, 32%, 54%);
+}
+
+.try-it>span{
+    font-weight: 700;
+}
+
+fieldset{
+    width: 100%;
+    background: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px rgba(0,0,0,0.18);
+}
+
+fieldset>legend{
+    display: none;
+}
+
+.form-control{
+    margin-bottom: 18px;
+}
+
+.form-control small{
+    display: none;
+}
+
+input{
+    width:100%;
+    color: hsl(249, 10%, 26%);
+    font-size: 14px;
+    background: #fff;
+    padding: 20px;
+    padding-right: 55px;
+    border-radius: 10px;
+    border: 1px solid hsl(246, 25%, 77%);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+input:hover,
+input:focus{
+    background: #fff;
+    border: 1.5px solid hsl(248, 32%, 49%);
+    outline: none;
+}
+
+
+
+.form-control.err input[type="text"],
+.form-control.err input[type="email"],
+.form-control.err input[type="password"]{
+    background-image: url('./images/icon-error.svg');
+    background-repeat: no-repeat;
+    background-position: right 20px top 50%;
+    color:hsl(0, 100%, 74%);
+    border: 2px solid hsl(0, 100%, 74%);
+}
+
+.form-control.err input::placeholder{
+    color: hsl(0, 100%, 74%);
+}
+
+.form-control.err input+small{
+    display: block;
+    text-align: right;
+    color:hsl(0, 100%, 74%);
+    font-weight: 700;
+    margin-top: .3rem;
+}
+
+
+
+.btn{
+    width: 100%;
+    padding: 22px 0;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+form>fieldset>.btn{
+    background: hsl(154, 59%, 51%);
+    margin-bottom: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    box-shadow: 0 5px hsl(154, 59%, 47%);
+    transition: background-color 0.4s ease-in-out ,box-shadow 0.5s ease-in-out;
+}
+
+form>fieldset>.btn:hover{
+    background: hsl(154, 59%, 61%);
+    box-shadow: 0 5px hsl(154, 59%, 56%);
+}
+
+.term-condition{
+    color: hsl(246, 25%, 77%);
+    font-size: 13.5px;
+}
+
+.term-condition>a{
+    color: hsl(0, 100%, 74%) ;
+}
+
+@media only screen and (max-width:1024px) and (min-width:768px){
+    .container{
+        max-width: 980px;
+        margin: auto;
+    }
+    header>.container{
+        margin: 1rem 2rem;
+    }
+}
+
+@media only screen and (max-width:767px){
+    body{
+        background: url('./images/bg-intro-mobile.png') repeat center center/cover, var(--color-primary-red);
+    }
+    .container{
+        max-width: 365px;
+        margin: auto;
+    }
+    .info-part{
+        text-align: center;
+    }
+    .info-part h1{
+        font-size: 2rem;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .info-part{
+        width: 100%;
+        margin-right: 0;
+    }
+    fieldset{
+        padding: 40px 30px
+    }
+}
+
+@media only screen and (max-width:360px){
+    .container{
+        max-width: 330px;
+    }
+    fieldset{
+        padding: 40px 25px
+    }
+    .btn{
+        font-size: .9rem;
+    }
+}
+
+@media only screen and (max-width:320px){
+    .container{
+        max-width: 300px;
+    }
+    fieldset{
+        padding: 30px 20px
+    }
+    .btn{
+        font-size: .8rem;
+    }
+}
